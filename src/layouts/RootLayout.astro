@@ -9,7 +9,11 @@ import SectionContainer from "../components/SectionContainer.astro";
 
 import {SITE_METADATA} from "../consts";
 
-type Props = CollectionEntry<'blog'>['data'];
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+}
 
 const {title, description} = Astro.props;
 ---
@@ -17,12 +21,11 @@ const {title, description} = Astro.props;
 <html lang={SITE_METADATA.language} class="scroll-smooth">
 <ViewTransitions />
 <BaseHead title={title} description={description}/>
-<body class="bg-white text-black antialiased">
+<body class="text-black antialiased min-h-screen relative">
+<div class="grain" />
 
-<!--TODO: Add Google Analytics-->
-<!--<Analytics analyticsConfig={SITE_METADATA.analytics as AnalyticsConfig} />-->
 <SectionContainer>
-    <div class="flex h-screen flex-col justify-between font-sans">
+    <div class="flex flex-col justify-between font-sans">
         <Header/>
         <main class="mb-auto">
             <slot/>
