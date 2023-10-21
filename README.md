@@ -1,16 +1,16 @@
 ![img.png](img.png)
 
 # Tailwind Astro Starter Project
+
 [![GitHub Repo stars](https://img.shields.io/github/stars/wanoo21/tailwind-astro-starting-blog?style=social)](https://GitHub.com/wanoo21/tailwind-astro-starting-blog/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/wanoo21/tailwind-astro-starting-blog?style=social)](https://GitHub.com/wanoo21/tailwind-astro-starting-blog/network/)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fipwanciu)](https://twitter.com/ipwanciu)
 
-[//]: # ([![Sponsor]&#40;https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx&#41;]&#40;https://github.com/sponsors/timlrx&#41;)
+[//]: # "[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx)](https://github.com/sponsors/timlrx)"
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/wanoo21/tailwind-astro-starting-blog)
-    
 
-This template is perfect for those who want to use Tailwind CSS and Astro to build a blog. 
+This template is perfect for those who want to use Tailwind CSS and Astro to build a blog.
 
 It is inspired by the [Tailwind Next.js Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) - one of the most popular Next.js blogging templates.
 
@@ -43,7 +43,7 @@ Even thought these features looks the same as the original template, they are im
 However, there are some features that are not in the original template, like:
 
 - Support for multiple authors pages - **each author will have** its own page, with a list of all the posts written by him/her.
-- Support for multiple tags pages - **each tag has its own page with custom description**, that can be customized with markdown. 
+- Support for multiple tags pages - **each tag has its own page with custom description**, that can be customized with markdown.
 - Related posts - **each post has** a list of related posts, provided by the author inside the markdown file.
 - Pagination inside blog/tags pages - **each blog/tags page has** a pagination.
 - Cool animations provided by Astro.
