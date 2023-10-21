@@ -12,16 +12,16 @@ const posts = await getCollection('blog', excludeDrafts).then(sortBlogPosts)
 ---
 
 <RootLayout title={SITE_METADATA.title} description={SITE_METADATA.description}>
-    <div class="divide-y divide-gray-200 dark:divide-gray-700">
+    <div class="divide-y divide-gray-200">
         <div class="space-y-2 pb-8 pt-6 md:space-y-5">
-            <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
                 Latest
             </h1>
-            <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            <p class="text-lg leading-7 text-gray-500">
                 {SITE_METADATA.description}
             </p>
         </div>
-        <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+        <ul class="divide-y divide-gray-200">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, ITEMS_PER_PAGE).map((post) => {
                 const {date, title, summary, tags} = post.data;
@@ -31,7 +31,7 @@ const posts = await getCollection('blog', excludeDrafts).then(sortBlogPosts)
                                 <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                                     <dl>
                                         <dt class="sr-only">Published on</dt>
-                                        <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                        <dd class="text-base font-medium leading-6 text-gray-500">
                                             <FormattedDate date={date}/>
                                         </dd>
                                     </dl>
@@ -40,7 +40,7 @@ const posts = await getCollection('blog', excludeDrafts).then(sortBlogPosts)
                                             <div>
                                                 <h2 class="text-2xl font-bold leading-8 tracking-tight">
                                                     <Link href={`/blog/${post.slug}`}
-                                                          class="text-gray-900 dark:text-gray-100">
+                                                          class="text-gray-900">
                                                         {title}
                                                     </Link>
                                                 </h2>
@@ -50,14 +50,14 @@ const posts = await getCollection('blog', excludeDrafts).then(sortBlogPosts)
                                                     ))}
                                                 </div>
                                             </div>
-                                            <div class="prose max-w-none text-gray-500 dark:text-gray-400">
+                                            <div class="prose max-w-none text-gray-500">
                                                 {summary}
                                             </div>
                                         </div>
                                         <div class="text-base font-medium leading-6">
                                             <Link
                                                     href={`/blog/${post.slug}`}
-                                                    class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                                    class="text-primary-500 hover:text-primary-600:text-primary-400"
                                                     aria-label={`Read "${title}"`}
                                             >
                                                 Read more &rarr;
@@ -75,7 +75,7 @@ const posts = await getCollection('blog', excludeDrafts).then(sortBlogPosts)
             <div class="flex justify-end text-base font-medium leading-6">
                 <Link
                         href="/blog"
-                        class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                        class="text-primary-500 hover:text-primary-600:text-primary-400"
                         aria-label="All posts"
                 >
                     All Posts &rarr;

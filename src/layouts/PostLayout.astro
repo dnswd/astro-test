@@ -27,13 +27,13 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
     <SectionContainer>
         <ScrollTopAndComments />
         <article>
-            <div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+            <div class="xl:divide-y xl:divide-gray-200 xl:">
                 <header class="pt-6 xl:pb-6">
                     <div class="space-y-1 text-center">
                         <dl class="space-y-10">
                             <div>
                                 <dt class="sr-only">Published on</dt>
-                                <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                <dd class="text-base font-medium leading-6 text-gray-500">
                                     <FormattedDate date={post.data.date}/>
                                 </dd>
                             </div>
@@ -43,8 +43,8 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                         </div>
                     </div>
                 </header>
-                <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
-                    <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+                <div class="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0">
+                    <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:">
                         <dt class="sr-only">Authors</dt>
                         <dd>
                             <ul class="flex flex-wrap justify-center items-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -57,12 +57,12 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                                             )}
                                             <dl class="whitespace-nowrap text-sm font-medium leading-5">
                                                 <dt class="sr-only">Name</dt>
-                                                <dd class="text-gray-900 dark:text-gray-100">{data.name}</dd>
+                                                <dd class="text-gray-900">{data.name}</dd>
                                                 <dt class="sr-only">Twitter</dt>
                                                 <dd>
                                                     {data.twitter && (
                                                             <Link href={data.twitter}
-                                                                  class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                                  class="text-primary-500 hover:text-primary-600:text-primary-400">
                                                                 {data.twitter.replace('https://twitter.com/', '@')}
                                                             </Link>
                                                     )}
@@ -70,7 +70,7 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                                             </dl>
                                         </li>
                                         <li>
-                                        <span class="text-gray-500 dark:text-gray-400">
+                                        <span class="text-gray-500">
                                             {data.occupation && data.company ? `${data.occupation} at ${data.company}` : data.company}
                                         </span>
                                         </li>
@@ -78,12 +78,12 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                             </ul>
                         </dd>
                     </dl>
-                    <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                        <div class="prose max-w-none pb-8 pt-10 dark:prose-invert">
+                    <div class="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0">
+                        <div class="prose max-w-none pb-8 pt-10">
                             <slot/>
                             <Content/>
                         </div>
-                        <!--    <div class="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">-->
+                        <!--    <div class="pb-6 pt-6 text-sm text-gray-700">-->
                         <!--        <Link href={discussUrl(path)} rel="nofollow">-->
                         <!--            Discuss on Twitter-->
                         <!--        </Link>-->
@@ -92,7 +92,7 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                         <!--    </div>-->
                         <!--    {SITE_METADATA.comments && (-->
                         <!--            <div-->
-                        <!--                    class="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"-->
+                        <!--                    class="pb-6 pt-6 text-center text-gray-700"-->
                         <!--                    id="comment"-->
                         <!--            >-->
                         <!--                <Comments slug={slug}/>-->
@@ -100,10 +100,10 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                         <!--    )}-->
                     </div>
                     <footer>
-                        <div class="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+                        <div class="divide-gray-200 text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
                             {tags && (
                                     <div class="py-4 xl:py-8">
-                                        <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                        <h2 class="text-xs uppercase tracking-wide text-gray-500">
                                             Tags
                                         </h2>
                                         <div class="flex flex-wrap">
@@ -117,20 +117,20 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                                     <div class="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                                         {prev && (
                                                 <div>
-                                                    <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                                    <h2 class="text-xs uppercase tracking-wide text-gray-500">
                                                         Previous Article
                                                     </h2>
-                                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                    <div class="text-primary-500 hover:text-primary-600:text-primary-400">
                                                         <Link href={`/blog/${prev.slug}`}>{prev.data.title}</Link>
                                                     </div>
                                                 </div>
                                         )}
                                         {next && (
                                                 <div>
-                                                    <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                                    <h2 class="text-xs uppercase tracking-wide text-gray-500">
                                                         Next Article
                                                     </h2>
-                                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                    <div class="text-primary-500 hover:text-primary-600:text-primary-400">
                                                         <Link href={`/blog/${next.slug}`}>{next.data.title}</Link>
                                                     </div>
                                                 </div>
@@ -139,12 +139,12 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                             )}
                             {related.length > 0 && (
                                     <div class="py-4 xl:pb-8">
-                                        <h2 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                        <h2 class="text-xs uppercase tracking-wide text-gray-500">
                                             Related Articles
                                         </h2>
                                         <ul class="flex flex-wrap gap-2 xl:space-x-0 xl:space-y-0">
                                             {related.map((post) => (
-                                                    <li class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                    <li class="text-primary-500 hover:text-primary-600:text-primary-400">
                                                         <Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
                                                     </li>
                                             ))}
@@ -155,7 +155,7 @@ const {Content, headings, remarkPluginFrontmatter} = await post.render();
                         <div class="pt-4 xl:pt-8">
                             <Link
                                     href="/blog"
-                                    class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                    class="text-primary-500 hover:text-primary-600:text-primary-400"
                                     aria-label="Back to the blog"
                             >
                                 &larr; Back to the blog

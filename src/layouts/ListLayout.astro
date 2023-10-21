@@ -17,13 +17,13 @@ const {title, description, page} = Astro.props;
 const hasDefaultSlot = Astro.slots.has('default');
 ---
 <RootLayout {title} {description}>
-    <div class="divide-y divide-gray-200 dark:divide-gray-700">
+    <div class="divide-y divide-gray-200">
         <div class="space-y-2 pb-8 pt-6 md:space-y-5">
-            <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
                 {title}
             </h1>
             {hasDefaultSlot && (
-                    <div class="prose dark:prose-invert py-4">
+                    <div class="prose py-4">
                         <slot/>
                     </div>
             )}
@@ -35,14 +35,14 @@ const hasDefaultSlot = Astro.slots.has('default');
                                 <article class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                                     <dl>
                                         <dt class="sr-only">Published on</dt>
-                                        <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                        <dd class="text-base font-medium leading-6 text-gray-500">
                                             <FormattedDate date={date}/>
                                         </dd>
                                     </dl>
                                     <div class="space-y-3 xl:col-span-3">
                                         <div>
                                             <h3 class="text-2xl font-bold leading-8 tracking-tight">
-                                                <Link href={`/blog/${slug}`} class="text-gray-900 dark:text-gray-100">
+                                                <Link href={`/blog/${slug}`} class="text-gray-900">
                                                     {title}
                                                 </Link>
                                             </h3>
@@ -52,7 +52,7 @@ const hasDefaultSlot = Astro.slots.has('default');
                                                 )}
                                             </div>
                                         </div>
-                                        <div class="prose max-w-none text-gray-500 dark:text-gray-400">
+                                        <div class="prose max-w-none text-gray-500">
                                             {summary}
                                         </div>
                                     </div>
